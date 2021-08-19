@@ -29,7 +29,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet"> -->
     <link href="../assets/css/custom.css" rel="stylesheet">
 </head>
 

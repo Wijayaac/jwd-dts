@@ -16,7 +16,9 @@ require_once './method/get-all.php';
         <input class="btn btn-lg btn-success" type="submit" value="Submit Comment" />
     </form>
     <div class="content row row-cols-2">
-        <?php $comments =  getComment($connection);
+        <?php 
+        $connection = connectDB();
+        $comments =  getComment($connection);
         while ($comment = mysqli_fetch_array($comments)) {
         ?>
             <div class="col card my-2 mx-auto" style="width: 18rem;">
