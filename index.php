@@ -17,8 +17,8 @@ require_once './method/get-all.php';
     </form>
     <div class="content row row-cols-2">
         <?php 
-        $connection = connectDB();
-        $comments =  getComment($connection);
+       
+        $comments =  getComment($koneksi);
         while ($comment = mysqli_fetch_array($comments)) {
         ?>
             <div class="col card my-2 mx-auto" style="width: 18rem;">

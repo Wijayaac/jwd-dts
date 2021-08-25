@@ -1,5 +1,4 @@
 <?php
-
 function getItems($connection)
 {
     $query = 'SELECT * FROM item';

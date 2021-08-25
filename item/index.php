@@ -1,23 +1,7 @@
 <?php
 require_once('../templates/navbar.php');
-require_once('../item/functions/get-all.php');
-
-// its Work
-$serverName = 'localhost';
-$databaseName = 'db_jwd';
-$username = 'phpmyadmin';
-$password = 'ac';
-
-// Create connection into database
-$connection = mysqli_connect($serverName, $username, $password, $databaseName);
-
-if (mysqli_connect_errno()) {
-    die('Connection failed : ' . mysqli_connect_error());
-}
-// * NOT Working
-// include('./utils/connection.php');
-// $connection = connectDB();
-$items = getItems($connection);
+include('../item/functions/get-all.php');
+include 'connection.php';
 ?>
 <div style=" max-width: 540px;" class="container my-5 py-5">
     <table class="table">
@@ -31,6 +15,7 @@ $items = getItems($connection);
         </thead>
         <tbody>
         <?php 
+            $items = getItems($connection);
             while ($item = mysqli_fetch_array($items)) {
             ?>
                 <tr>
