@@ -1,5 +1,5 @@
 <?php
-include_once 'connection.php';
+include_once '../db/connection.php';
 
 $id = $_GET['id'];
 $query = "SELECT id,judul,penulis,penerbit,tahun FROM tbl_buku WHERE id = '$id'";
@@ -8,7 +8,7 @@ $data = mysqli_fetch_assoc($result);
 mysqli_close($connection)
 
 ?>
-<form action="/library/update.php" method="POST">
+<form action="../request/update.php" method="POST">
   <div class="mb-3">
     <label for="exampleInputId1" class="form-label">ISBN</label>
     <input type="number" value="<?= $data['id'] ?>" name="id" class="form-control" id="exampleInputId1">

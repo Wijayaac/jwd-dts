@@ -1,5 +1,5 @@
 <?php ?>
-<form action="/library/create.php" method="POST">
+<form action="../request/create.php" method="POST">
   <div class="mb-3">
     <label for="exampleInputId1" class="form-label">ISBN</label>
     <input type="number" name="id" class="form-control" id="exampleInputId1">

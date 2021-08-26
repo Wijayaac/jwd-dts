@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include '../db/connection.php';
 
 //* retrieve data from request post
 $id = $_POST['id'];
@@ -12,7 +12,7 @@ $query = "UPDATE tbl_buku SET judul='$judul',penulis='$penulis',penerbit='$pener
 
 if ($connection->query($query) === TRUE) {
     mysqli_close($connection);
-    header('location:index.php');
+    header('location:../index.php');
 } else {
     # code...
     echo 'error' . $connection->error;

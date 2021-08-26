@@ -1,6 +1,7 @@
 <?php
-require_once('../templates/navbar.php');
-include '../library/db/connection.php';
+require_once '../../templates/navbar.php';
+include '../db/connection.php';
+require_once './request/get-all.php';
 ?>
 <div style="max-width: 720px;" class="row mx-auto">
     <div class="col">
@@ -16,23 +17,26 @@ include '../library/db/connection.php';
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Judul</th>
-                    <th scope="col">Penulis</th>
-                    <th scope="col">Penerbit</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-                $query = "SELECT id,judul,penulis,penerbit FROM tbl_buku";
-                $result = mysqli_query($connection,$query);
+                $result = getMembers($connection);
                 while ($book=mysqli_fetch_array($result)) {
                 ?>
                 <tr>
                     <th scope="row"><?= $book['id'] ?></th>
-                    <td><?= $book['judul'] ?></td>
-                    <td><?= $book['penulis'] ?></td>
-                    <td><?= $book['penerbit'] ?></td>
+                    <td><?= $book['nama'] ?></td>
+                    <td><?= $book['jk'] ?></td>
+                    <td><?= $book['alamat'] ?></td>
+                    <td><?= $book['status'] ?></td>
+                    <td><?= $book['foto'] ?></td>
                     <td>
                         <a href="<?='./request/edit.php?id='. $book['id'] ?>" class="btn btn-info">Edit</a>
                         <a href="<?='./request/delete.php?id='. $book['id'] ?>" class="btn btn-danger">Delete</a>
@@ -45,5 +49,5 @@ include '../library/db/connection.php';
 </div>
 
 <?php
-require_once('../templates/bottom.php');
+require_once '../../templates/bottom.php';
 ?>
